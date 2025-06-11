@@ -9,4 +9,10 @@ public class TextMachineController {
 
     public TextMachineController(TextMachineService textMachineService) {
         this.textMachineService = textMachineService;
+    }
+
+    @GetMapping("/lista") //Listar
+    public List<TextMachine> getAllTextMachine() {
+        return textMachineService.getAllTextMachine();
+    }
 }
