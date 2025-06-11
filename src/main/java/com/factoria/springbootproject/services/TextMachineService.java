@@ -21,6 +21,15 @@ public class TextMachineService {
     }
 
     public void updatePhrase(Long id, TextMachine updatedPhrase) {
+        public void updatePhrase(Long id, TextMachine updatedPhrase) {
+            TextMachine existingPhrase = textMachineRepository.findById(id)
+                    .orElseThrow(() -> new RuntimeException("Frase no encontrada!"));
+
+            existingPhrase.setAuthor(updatedPhrase.getAuthor());
+            existingPhrase.setPhrase(updatedPhrase.getPhrase());
+
+            textMachineRepository.save(existingPhrase);
+        }
     }
 
     public void deletePhrase(Long id) {

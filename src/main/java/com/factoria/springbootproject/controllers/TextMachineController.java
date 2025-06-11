@@ -19,5 +19,12 @@ public class TextMachineController {
     public void addPhrase(@RequestBody TextMachine newPhrase) {
         textMachineService.addPhrase(newPhrase);
     }
+    @PutMapping("/update/{id}") //Editar
+    public void updatePhrase(
+            @PathVariable Long id,
+            @RequestBody TextMachine updatedPhrase) {
+        textMachineService.updatePhrase(id, updatedPhrase);
+    }
+
 
 }
