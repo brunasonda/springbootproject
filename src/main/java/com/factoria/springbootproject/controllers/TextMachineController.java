@@ -25,6 +25,8 @@ public class TextMachineController {
             @RequestBody TextMachine updatedPhrase) {
         textMachineService.updatePhrase(id, updatedPhrase);
     }
-
-
+    @DeleteMapping("/delete/{id}")
+    public void deletePhrase(@PathVariable Long id) {
+        textMachineService.deletePhrase(id);
+    }
 }

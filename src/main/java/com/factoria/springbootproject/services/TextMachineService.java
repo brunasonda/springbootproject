@@ -33,5 +33,10 @@ public class TextMachineService {
     }
 
     public void deletePhrase(Long id) {
+        if (textMachineRepository.existsById(id)){
+            textMachineRepository.deleteById(id);
+        } else {
+            System.out.println("Id no encontrado!");
+        }
     }
 }
