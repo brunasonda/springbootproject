@@ -17,6 +17,7 @@ public class TextMachineService {
     }
 
     public TextMachine addPhrase(TextMachine newPhrase){
+        return textMachineRepository.save(newPhrase);
     }
 
     public void updatePhrase(Long id, TextMachine updatedPhrase) {
