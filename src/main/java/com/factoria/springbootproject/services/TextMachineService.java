@@ -13,6 +13,7 @@ public class TextMachineService {
     }
 
     public List<TextMachine> getAllTextMachine(){
+        return textMachineRepository.findAll();
     }
 
     public TextMachine addPhrase(TextMachine newPhrase){
