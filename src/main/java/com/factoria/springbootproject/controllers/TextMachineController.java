@@ -15,4 +15,9 @@ public class TextMachineController {
     public List<TextMachine> getAllTextMachine() {
         return textMachineService.getAllTextMachine();
     }
+    @PostMapping("/add") //Añadir
+    public void addPhrase(@RequestBody TextMachine newPhrase) {
+        textMachineService.addPhrase(newPhrase);
+    }
+
 }
