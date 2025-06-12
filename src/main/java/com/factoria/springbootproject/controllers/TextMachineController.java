@@ -4,6 +4,7 @@ import com.factoria.springbootproject.services.TextMachineService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
+@RestController
 public class TextMachineController {
     private final TextMachineService textMachineService;
 
@@ -14,5 +15,25 @@ public class TextMachineController {
     @GetMapping("/lista") //Listar
     public List<TextMachine> getAllTextMachine() {
         return textMachineService.getAllTextMachine();
+    }
+
+    @GetMapping("/find/{id}") //Listar por Id
+    public TextMachine findById(@PathVariable Long id) {
+        return textMachineService.findById(id);
+    }
+
+    @PostMapping("/add") //Añadir
+    public void addPhrase(@RequestBody TextMachine newPhrase) {
+        textMachineService.addPhrase(newPhrase);
+    }
+    @PutMapping("/update/{id}") //Editar
+    public void updatePhrase(
+            @PathVariable Long id,
+            @RequestBody TextMachine updatedPhrase) {
+        textMachineService.updatePhrase(id, updatedPhrase);
+    }
+    @DeleteMapping("/delete/{id}")
+    public void deletePhrase(@PathVariable Long id) {
+        textMachineService.deletePhrase(id);
     }
 }
