@@ -4,6 +4,7 @@ import com.factoria.springbootproject.services.TextMachineService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
+@RestController
 public class TextMachineController {
     private final TextMachineService textMachineService;
 
