@@ -18,6 +18,10 @@ public class TextMachineService {
         return textMachineRepository.findAll();
     }
 
+    public TextMachine findById(Long id) {
+        return textMachineRepository.findById(id).orElse(null);
+    }
+
     public TextMachine addPhrase(TextMachine newPhrase){
         return textMachineRepository.save(newPhrase);
     }

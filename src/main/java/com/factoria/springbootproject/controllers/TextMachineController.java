@@ -16,6 +16,12 @@ public class TextMachineController {
     public List<TextMachine> getAllTextMachine() {
         return textMachineService.getAllTextMachine();
     }
+
+    @GetMapping("/find/{id}") //Listar por Id
+    public TextMachine findById(@PathVariable Long id) {
+        return textMachineService.findById(id);
+    }
+
     @PostMapping("/add") //Añadir
     public void addPhrase(@RequestBody TextMachine newPhrase) {
         textMachineService.addPhrase(newPhrase);
