@@ -12,21 +12,21 @@ public class TextMachineController {
         this.textMachineService = textMachineService;
     }
 
-    @GetMapping("/lista") //Listar
+    @GetMapping("/list")
     public List<TextMachine> getAllTextMachine() {
         return textMachineService.getAllTextMachine();
     }
 
-    @GetMapping("/find/{id}") //Listar por Id
+    @GetMapping("/find/{id}")
     public TextMachine findById(@PathVariable Long id) {
         return textMachineService.findById(id);
     }
 
-    @PostMapping("/add") //Añadir
+    @PostMapping("/add")
     public void addPhrase(@RequestBody TextMachine newPhrase) {
         textMachineService.addPhrase(newPhrase);
     }
-    @PutMapping("/update/{id}") //Editar
+    @PutMapping("/update/{id}")
     public void updatePhrase(
             @PathVariable Long id,
             @RequestBody TextMachine updatedPhrase) {
